@@ -16,7 +16,6 @@
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "ejs": "^2.6.1",
-    "iscroll": "^5.2.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
     "koa-compose": "^4.0.0",
@@ -31,18 +30,13 @@
     "pm2": "^2.10.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-hammerjs": "^1.0.1",
-    "react-hint": "^3.2.0",
-    "react-iscroll": "^2.0.3",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.2.2",
-    "react-validate": "^0.2.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
-    "superagent": "^3.8.2",
-    "validator": "^11.1.0"
+    "superagent": "^3.8.2"
   },
   "devDependencies": {
     "asset-require-hook": "^1.2.0",

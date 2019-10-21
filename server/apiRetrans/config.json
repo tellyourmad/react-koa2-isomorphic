@@ -1,0 +1,6 @@
+{
+    "protocol": "http:",
+    "host":"mockhttp.cn",
+    "port":80,
+    "prefix":"/mock"
+}

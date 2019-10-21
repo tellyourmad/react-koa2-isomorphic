@@ -1,0 +1,24 @@
+{
+    "presets": [
+        "env",
+        "react",
+        "stage-0"
+    ],
+    "env":{
+        "development":{
+            "plugins":[
+                "dynamic-import-webpack"
+            ]
+        }
+    },
+    "plugins": [
+        "transform-runtime",
+        "add-module-exports",
+        "syntax-dynamic-import",
+        "transform-decorators-legacy",
+        ["import-inspector", {
+            "serverSideRequirePath": true,
+            "webpackRequireWeakId": true
+        }]
+    ]
+}

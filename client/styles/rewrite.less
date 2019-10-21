@@ -1,0 +1,112 @@
+* {
+    //默认样式重置
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+html,body{
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;//在不引用外部字体的情况下，这个配方最好
+    -webkit-text-size-adjust: none;//解决手机横屏字体会变大的问题
+	height: 100%;
+    overflow: hidden;
+}
+
+
+
+html {
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+}
+
+
+
+
+
+body {
+    width: 100%;
+    //max-width: 1024px;
+    margin: 0 auto;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+//使一些不认识h5新标签的内核也将这些标签表现为div
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+
+
+img {
+    max-width: 100% !important;
+    vertical-align: middle;
+}
+
+
+//清除移动端点击标签会出的小“阴影”
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline:none;
+    -moz-outline-style:none;
+}
+*:active,*:hover{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+:not(html,body){
+    //在移动端中，使用overflow:auto或scroll时，使iphone手机在滚动是可以表现出有惯性，但部分android手机不支持，故最好使用插件来做滚动条
+//  -webkit-overflow-scrolling: touch;
+}
+
+
+
+
+input{
+    //去除input聚焦效果
+    &:focus{
+        outline: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    //修改placeholder样式
+    &::-webkit-input-placeholder{
+        font-size: 0.95em;
+        color: #333;
+        opacity: 0.5;
+    }
+}
+
+
+body>div{
+    height: 100%;
+}
+
+

@@ -1,7 +1,6 @@
 /dist
 
 views/prod/index.html
-views/dev/index.html
 node_modules
 
 /tests/e2e/videos/

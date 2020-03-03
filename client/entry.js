@@ -6,7 +6,6 @@ import configureStore from './redux/configureStore';
 import App from "./App";
 
 require('./styles');
-import 'react-hint/css/index.css';
 
 
 

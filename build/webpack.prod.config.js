@@ -20,21 +20,18 @@ function getExternals() {
 
 
 let clientConfig = merge(baseWebpackConfig,{
+    mode: 'production',
 	entry:{
 		bundle:[
 			'./client/entry.js'
 		],
 		vendor:[
-            "react-hammerjs",
             'react',
             'react-dom',
             'redux',
             'react-redux',
-            'iscroll',
-            'react-iscroll',
             'superagent',
-            'react-router-dom',
-            'react-validate'
+            'react-router-dom'
 		]
 	},
     output: {
@@ -78,9 +75,10 @@ let clientConfig = merge(baseWebpackConfig,{
             }
         }),
         new HtmlWebpackPlugin({
-            favicon: './static/BookMark.png',
+            favicon: './static/BookMark.ico',
             filename: '../../views/prod/index.html',
-            template: './views/tpl/index.html'
+            template: './views/tpl/index.html',
+            chunksSortMode: "dependency"
         }),
         new ProgressBarPlugin({summary: false}),
         new ExtractTextPlugin('./[name].[contenthash:8].css', {allChunks: true}),
@@ -95,13 +93,14 @@ let clientConfig = merge(baseWebpackConfig,{
 
 
 let serverConfig = merge(baseWebpackConfig,{
+    mode: 'production',
     entry:{
         server: './server/server.prod'
     },
     output: {
         path: path.resolve(__dirname, '../dist/server'),
-        chunkFilename: 'chunk.[name].js',
-        filename: '[name].js'
+        chunkFilename: 'chunk.[name].[chunkhash:8].js',
+        filename: '[name].[chunkhash:8].js'
     },
     target: 'node',
     node: {

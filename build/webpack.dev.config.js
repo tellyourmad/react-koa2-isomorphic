@@ -7,6 +7,7 @@ const path = require('path'),
     baseWebpackConfig = require('./webpack.base.config');
 
 module.exports = merge(baseWebpackConfig,{
+    mode: 'development',
     devtool: 'eval-source-map',
     entry:'./client/entry.js',
     output: {
@@ -39,7 +40,7 @@ module.exports = merge(baseWebpackConfig,{
         }),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            favicon: './static/BookMark.png',
+            favicon: './static/BookMark.ico',
             filename: '../views/dev/index.html',
             template: './views/tpl/index.html'
         }),

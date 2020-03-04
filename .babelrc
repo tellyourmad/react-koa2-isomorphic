@@ -16,6 +16,7 @@
         "add-module-exports",
         "syntax-dynamic-import",
         "transform-decorators-legacy",
+        "react-loadable/babel",
         ["import-inspector", {
             "serverSideRequirePath": true,
             "webpackRequireWeakId": true

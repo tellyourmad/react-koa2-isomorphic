@@ -1,7 +1,7 @@
 {
-  "name": "Publicity",
-  "version": "1.0.0",
-  "description": "Weehome Publicity",
+  "name": "react-koa2-ssr",
+  "version": "1.0.2",
+  "description": "react ssr",
   "main": "entry.js",
   "scripts": {
     "dev": "cross-env port=80 NODE_ENV=development nodemon ./server/server.dev.js --watch server --watch build",
@@ -93,5 +93,8 @@
   ],
   "targets": {
     "node": "current"
+  },
+  "engines": {
+    "node": "13.2.0"
   }
 }

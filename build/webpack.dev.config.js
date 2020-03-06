@@ -7,7 +7,7 @@ const path = require('path'),
     baseWebpackConfig = require('./webpack.base.config');
 
 module.exports = merge(baseWebpackConfig,{
-    mode: 'development',
+    // mode: 'development',
     devtool: 'eval-source-map',
     entry:'./client/entry.js',
     output: {

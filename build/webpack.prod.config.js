@@ -20,7 +20,7 @@ function getExternals() {
 
 
 let clientConfig = merge(baseWebpackConfig,{
-    mode: 'production',
+    // mode: 'production',
 	entry:{
 		bundle:[
 			'./client/entry.js'
@@ -93,14 +93,14 @@ let clientConfig = merge(baseWebpackConfig,{
 
 
 let serverConfig = merge(baseWebpackConfig,{
-    mode: 'production',
+    // mode: 'production',
     entry:{
         server: './server/server.prod'
     },
     output: {
         path: path.resolve(__dirname, '../dist/server'),
-        chunkFilename: 'chunk.[name].[chunkhash:8].js',
-        filename: '[name].[chunkhash:8].js'
+        chunkFilename: 'chunk.[name].js',
+        filename: '[name].js'
     },
     target: 'node',
     node: {

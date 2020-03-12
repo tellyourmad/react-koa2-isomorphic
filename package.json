@@ -1,7 +1,7 @@
 {
-  "name": "react-koa2-ssr",
+  "name": "react-koa2-isomorphic",
   "version": "1.0.2",
-  "description": "react ssr",
+  "description": "boilerplate for isomorphic react applications",
   "main": "entry.js",
   "scripts": {
     "dev": "cross-env port=8081 nodemon ./server/server.dev.js",

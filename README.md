@@ -1,59 +1,62 @@
-# react-koa2-ssr
-这是一个React在服务端渲染（SSR）的模板
+# react-koa2-isomorphic
 
+这是一个 React 实现同构（Universal or Isomorphic）的模板
 
+#### 特点
+
+首屏服务端渲染（SSR）的 SPA 项目
 
 #### 主要使用的依赖
+
 - react v16.3.2+
 - redux v4.0.0+
 - koa v2.5.1+
 - pm2 v2.10.3+
-- node 没有特别要求，本人使用版本为 v8.12.0
-
+- node v13.2.0
 
 #### 什么是服务端渲染（SSR）
+
 - 何为渲染，以下分成两种情况：
-    1. 解析html/css/js，最终生成渲染树
-    2. 发送请求获得数据或其它原因修改数据，触发渲染树的更新
+  1. 解析 html/css/js，最终生成渲染树
+  2. 发送请求获得数据或其它原因修改数据，触发渲染树的更新
 - “服务端渲染”又做了什么？
-    1. 在服务端完成“js到dom”的解析过程（ng/vue/react通过webpack打包后都是主要生产物为js）
-    2. 在服务端完成“首次数据的加载”，将“首页”数据获取成功并填充到渲染树中再返回完整的“页面”（此步可选）
-- 为什么要使用SSR？
-    - 首先需要先了解从请求这个页面开始，发生了什么后，才能看到该页面：
-        <table style="text-align:center;">
-            <tr>
-                <th colspan="2">angular/vue/react</th>
-            </tr>
-            <tr>
-                <th>SSR</th>
-                <th>非SSR</th>
-            </tr>
-            <tr>
-                <td>服务端-解析部分js</td>
-                <td style="color:red;">客户端-下载html</td>
-            </tr>
-            <tr>
-                <td>服务端-注入DOM</td>
-                <td>客户端-下载html里面的js</td>
-            </tr>
-            <tr>
-                <td style="color:red;">客户端-下载html</td>
-                <td>客户端-解析js</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>客户端-注入DOM</td>
-            </tr>
-        </table>
-    - 容易生成一个SEO友好的页面
-    - 首屏加载更快
-- 为什么要使用node？
-    - ng/vue/react通过webpack打包后生产出js和css文件
-    - 需要使用node执行这些js文件
-
-
+  1. 在服务端完成“js 到 dom”的解析过程（ng/vue/react 通过 webpack 打包后都是主要生产物为 js）
+  2. 在服务端完成“首次数据的加载”，将“首页”数据获取成功并填充到渲染树中再返回完整的“页面”（此步可选）
+- 为什么要使用 SSR？
+  - 首先需要先了解从请求这个页面开始，发生了什么后，才能看到该页面：
+      <table style="text-align:center;">
+          <tr>
+              <th colspan="2">angular/vue/react</th>
+          </tr>
+          <tr>
+              <th>SSR</th>
+              <th>非SSR</th>
+          </tr>
+          <tr>
+              <td>服务端-解析部分js</td>
+              <td style="color:red;">客户端-下载html</td>
+          </tr>
+          <tr>
+              <td>服务端-注入DOM</td>
+              <td>客户端-下载html里面的js</td>
+          </tr>
+          <tr>
+              <td style="color:red;">客户端-下载html</td>
+              <td>客户端-解析js</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td>客户端-注入DOM</td>
+          </tr>
+      </table>
+  - 容易生成一个 SEO 友好的页面
+  - 首屏加载更快
+- 为什么要使用 node？
+  - ng/vue/react 通过 webpack 打包后生产出 js 和 css 文件
+  - 需要使用 node 执行这些 js 文件
 
 #### 架构
+
 <table style="text-align:center;">
     <tr>
         <td rowspan="2">划分</td>
@@ -91,4 +94,13 @@
     </tr>
 </table>
 
-#### 
+#### 备注
+
+server 端入口文件有两个（dev 和 prod），而 dev 环境使用 nodemon 实现热加载，因为热加载的原因，dev 环境并没有 ssr
+
+#### 不足与未做到的事
+
+1. 热加载不够迅速，并无法做到自动推送
+2. 路由匹配逻辑待优化
+3. 未使用 react-hook
+4. loading 组件样式实现自动注入

@@ -1,25 +1,22 @@
 {
-    "presets": [
-        "env",
-        "react",
-        "stage-0"
-    ],
-    "env":{
-        "development":{
-            "plugins":[
-                "dynamic-import-webpack"
-            ]
-        }
-    },
-    "plugins": [
-        "transform-runtime",
-        "add-module-exports",
-        "syntax-dynamic-import",
-        "transform-decorators-legacy",
-        "react-loadable/babel",
-        ["import-inspector", {
-            "serverSideRequirePath": true,
-            "webpackRequireWeakId": true
-        }]
+  "presets": ["env", "react", "stage-0"],
+  "env": {
+    "development": {
+      "plugins": ["dynamic-import-webpack"]
+    }
+  },
+  "plugins": [
+    "transform-runtime",
+    "add-module-exports",
+    "syntax-dynamic-import",
+    "transform-decorators-legacy",
+    "react-loadable/babel",
+    [
+      "import-inspector",
+      {
+        "serverSideRequirePath": true,
+        "webpackRequireWeakId": true
+      }
     ]
+  ]
 }

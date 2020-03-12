@@ -1,46 +1,46 @@
-@primaryColor: #F56151;
+@primaryColor: #f56151;
 @bgColor: #bababa;
 @firstColor: #0fd6ff;
-@secondColor:#58bd55;
+@secondColor: #58bd55;
 @thirdColor: #eb68a1;
 @fourthColor: #f3d53f;
 @transparent: transparent;
 @boxSize: 48px;
 @speed2x: 2s;
 @speed3x: 1s;
-@speed4x: .5s;
+@speed4x: 0.5s;
 
-@keyframes cp-flip-animate-before{
-    0% {
-        transform: rotateY(0deg) rotateX(0deg);
-    }
-    25%{
-        transform: rotateY(360deg) rotateX(0deg);
-    }
-    50%{
-        transform: rotateY(360deg) rotateX(360deg);
-    }
-    75%{
-        transform: rotateY(0deg) rotateX(360deg);
-    }
-    100%{
-        transform: rotateY(0deg) rotateX(0deg);
-    }
+@keyframes cp-flip-animate-before {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+  75% {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
 }
-#LoadingAnimate{
-    width: 48px;
-    height: 48px;
-    position: relative;
-    transform-style: preserve-3d;
-    perspective: 10em;
-    &:before{
-        width: 100%;
-        height: 100%;
-        background: @primaryColor;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        animation: cp-flip-animate-before @speed2x linear infinite;
-    }
+#LoadingAnimate {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 10em;
+  &:before {
+    width: 100%;
+    height: 100%;
+    background: @primaryColor;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: cp-flip-animate-before @speed2x linear infinite;
+  }
 }

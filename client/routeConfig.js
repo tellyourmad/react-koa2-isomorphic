@@ -1,8 +1,6 @@
-import React from 'react';
 import Loadable from "react-loadable";
 // import loadable from '@loadable/component';
 import Loading from "./section/Loading";
-
 
 const setLoadable = function(section, requireComp) {
   return Loadable({
@@ -19,20 +17,20 @@ export const routes = [
   },
   {
     path: "/Index",
-    component: setLoadable(
-      () => import(/* webpackChunkName: "Home" */ "./Section/IndexPage")
+    component: setLoadable(() =>
+      import(/* webpackChunkName: "Home" */ "./Section/IndexPage")
     )
   },
   {
     path: "/Mine",
-    component: setLoadable(
-      () => import(/* webpackChunkName: "Mine" */ "./Section/Mine")
+    component: setLoadable(() =>
+      import(/* webpackChunkName: "Mine" */ "./Section/Mine")
     )
   },
   {
     path: "/AjaxTest",
-    component: setLoadable(
-      () => import(/* webpackChunkName: "AjaxTest" */ "./Section/AjaxTest")
+    component: setLoadable(() =>
+      import(/* webpackChunkName: "AjaxTest" */ "./Section/AjaxTest")
     )
   }
 ];

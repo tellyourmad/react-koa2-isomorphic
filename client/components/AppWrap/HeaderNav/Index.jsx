@@ -1,34 +1,26 @@
-import React from 'react';
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import styles from './style';
-
-
-
-
+import styles from "./style";
 
 class HeaderNav extends React.Component {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    render() {
-        return (
-            <nav className={styles.headerNav}>
-                <NavLink
-                    activeClassName={styles.active}
-                    to='/Index'
-                >首页</NavLink>
-                <NavLink
-                    activeClassName={styles.active}
-                    to='/AjaxTest'
-                >接口测试</NavLink>
-                <NavLink
-                    activeClassName={styles.active}
-                    to='/Mine'
-                >我的</NavLink>
-            </nav>
-        );
-
-    }
+  render() {
+    return (
+      <nav className={styles.headerNav}>
+        <NavLink activeClassName={styles.active} to="/Index">
+          首页
+        </NavLink>
+        <NavLink activeClassName={styles.active} to="/AjaxTest">
+          接口测试
+        </NavLink>
+        <NavLink activeClassName={styles.active} to="/Mine">
+          我的
+        </NavLink>
+      </nav>
+    );
+  }
 }
-export default HeaderNav
+export default HeaderNav;

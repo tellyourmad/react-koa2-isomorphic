@@ -3,7 +3,7 @@ import styles from './style';
 import ajax from "@ajax";
 
 
-export default class BusinessPartner extends React.Component{
+export default class AjaxTest extends React.Component{
     constructor(props) {
         super(props);
         this.state={
@@ -23,7 +23,7 @@ export default class BusinessPartner extends React.Component{
     }
     render(){
         return (
-            <div className={styles.businessPartner}>
+            <div className={styles.ajaxTest}>
                 <p className={styles.title}>下面是发送请求演示：</p>
                 {this.state.userInfo&&(
                     <div>

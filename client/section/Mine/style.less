@@ -1,25 +1,28 @@
 @value LightGreyBg from '@stylization';
-.entryProcess{
+.mine {
+  width: 100%;
+  background-color: LightGreyBg;
+  &:after {
+    content: "";
+    display: table;
+  }
+  > .banner {
+    position: relative;
     width: 100%;
-    background-color: LightGreyBg;
-    &:after{
-        content: '';
-        display: table;
+    display: block;
+    height: 200px;
+    background-position: center bottom;
+    background-size: cover;
+    > img {
+      width: 689/1400 * 100%;
+      position: absolute;
+      z-index: 1;
+      bottom: 70px/2;
+      left: 50%;
+      transform: translateX(-50%);
     }
-    >.banner{
-        position: relative;
-        width: 100%;
-        display: block;
-        height: 721px;
-        background-position: center bottom;
-        background-size: cover;
-        >img{
-            width: 689/1400*100%;
-            position: absolute;
-            z-index: 1;
-            bottom: 70px/2;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
+  }
+  > .text {
+    text-align: center;
+  }
 }

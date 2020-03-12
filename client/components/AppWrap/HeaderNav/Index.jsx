@@ -20,8 +20,8 @@ class HeaderNav extends React.Component {
                 >首页</NavLink>
                 <NavLink
                     activeClassName={styles.active}
-                    to='/BusinessPartner'
-                >招商计划</NavLink>
+                    to='/AjaxTest'
+                >接口测试</NavLink>
                 <NavLink
                     activeClassName={styles.active}
                     to='/Mine'

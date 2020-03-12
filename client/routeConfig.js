@@ -28,10 +28,10 @@ export const routes = [
     )
   },
   {
-    path: "/BusinessPartner",
+    path: "/AjaxTest",
     component: setLoadable(() =>
       import(
-        /* webpackChunkName: "BusinessPartner" */ "./Section/BusinessPartner"
+        /* webpackChunkName: "AjaxTest" */ "./Section/AjaxTest"
       )
     )
   }

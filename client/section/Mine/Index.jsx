@@ -19,8 +19,8 @@ class Mine extends React.Component {
           <img src={require("@Images/BannerBg.png")} />
         </div>
         <p className={styles.text}>
-          name:{ReduxState.user.name || "无"};password:
-          {ReduxState.user.password || "无"};22
+          name:{ReduxState.user.name || "无"};
+          password:{ReduxState.user.password || "无"};
         </p>
       </div>
     );

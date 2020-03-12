@@ -4,7 +4,7 @@
   "description": "react ssr",
   "main": "entry.js",
   "scripts": {
-    "dev": "cross-env port=80 NODE_ENV=development nodemon ./server/server.dev.js --watch server --watch build",
+    "dev": "cross-env port=8080 nodemon ./server/server.dev.js",
     "build": "npm run clean && cross-env port=80 webpack --config ./build/webpack.prod.config.js --progress",
     "clean": "rimraf ./dist/*",
     "node": "node ./dist/server/server.js",
@@ -66,6 +66,7 @@
     "koa-webpack-hot-middleware": "^1.0.3",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
+    "module-alias": "^2.2.2",
     "nodemon": "^1.17.4",
     "postcss": "^7.0.2",
     "postcss-less": "^2.0.0",

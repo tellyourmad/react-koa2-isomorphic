@@ -4,8 +4,7 @@ import AppWrap from "./components/AppWrap";
 import {routes} from './routeConfig';
 import NotFound from "./section/404";
 
-
-const App=()=>(
+const App = () => (
     <AppWrap>
         <Switch>
             {routes.map(function(v,k){

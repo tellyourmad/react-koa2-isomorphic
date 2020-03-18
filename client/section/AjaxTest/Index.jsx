@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./style";
-import ajax from "@ajax";
+import ajax from "@utils/ajax";
 
 export default class AjaxTest extends React.Component {
   constructor(props) {
@@ -9,6 +9,14 @@ export default class AjaxTest extends React.Component {
       userInfo: null
     };
   }
+  // async UNSAFE_componentWillMount() {
+  //   const res = await ajax.send({
+  //     url: "api/user/getUserInfo",
+  //     type: "get"
+  //   });
+  //   console.log(res)
+  //   a = res;
+  // }
   getUserInfo() {
     ajax
       .send({

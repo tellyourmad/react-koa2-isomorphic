@@ -27,13 +27,11 @@ module.exports = {
       "@uiComp": path.resolve(__dirname, "../client/components/uiComp"),
       "@logicComp": path.resolve(__dirname, "../client/components/logicComp"),
       "@Section": path.resolve(__dirname, "../client/Section"),
+      "@utils": path.resolve(__dirname, "../client/utils"),
 
-      "@ajax": path.resolve(__dirname, "../client/utils/ajax.js"),
-      "@classNames": path.resolve(__dirname, "../client/utils/classNames.js"),
-
-      "@stylization": path.resolve(
+      "@styles": path.resolve(
         __dirname,
-        "../client/styles/stylization.less"
+        "../client/styles"
       ),
 
       "@redux": path.resolve(__dirname, "../client/redux"),

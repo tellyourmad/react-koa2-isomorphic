@@ -5,6 +5,14 @@ import Config from "./config.json"; // 后端服务地址
 const router = new Router({ prefix: "/user" });
 
 router.get("/getUserInfo", async function(ctx) {
+  async function delay(time) {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        resolve();
+      }, time);
+    });
+  }
+  await delay(5000);
   ctx.body = await utils
     .sendHttp({
       protocol: Config.protocol,

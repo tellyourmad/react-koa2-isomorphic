@@ -77,7 +77,7 @@ class PreloadTest extends React.Component {
       <div>
         <p>以下数据在服务端中已经请求完成并注入到store中：</p>
         <p>
-          已经加载了{ReduxState.product.listLoadedPages}页，每页${PAGE_SIZE}条。
+          已经加载了{ReduxState.product.listLoadedPages}页，每页{PAGE_SIZE}条。
         </p>
         <ul>
           {ReduxState.product.list.map((item) => (

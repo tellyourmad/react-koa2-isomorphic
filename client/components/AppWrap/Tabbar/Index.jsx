@@ -1,26 +1,29 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./style";
 
-class HeaderNav extends React.Component {
+class Tabbar extends React.Component {
   constructor() {
     super();
   }
 
   render() {
     return (
-      <nav className={styles.headerNav}>
+      <nav className={styles.tabbar}>
         <NavLink activeClassName={styles.active} to="/Index">
           首页
         </NavLink>
         <NavLink activeClassName={styles.active} to="/AjaxTest">
           接口测试
         </NavLink>
-        <NavLink activeClassName={styles.active} to="/Mine">
-          我的
+        <NavLink activeClassName={styles.active} to="/ReduxTest">
+          Redux演示
+        </NavLink>
+        <NavLink activeClassName={styles.active} to="/PreloadTest">
+          预加载演示
         </NavLink>
       </nav>
     );
   }
 }
-export default HeaderNav;
+export default Tabbar;

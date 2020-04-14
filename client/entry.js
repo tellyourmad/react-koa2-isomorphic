@@ -7,7 +7,7 @@ import App from "./App";
 
 require("./styles");
 
-const store = configureStore(window.REDUX_STATE);
+const store = configureStore(window.__REDUX_STATE__);
 
 hydrate(
   <Provider store={store}>

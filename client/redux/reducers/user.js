@@ -2,7 +2,7 @@ import ActionTypes from "../ActionTypes";
 
 const DEFAULT = {
   name: "",
-  password: ""
+  password: "",
 };
 
 export default function user(state = DEFAULT, action) {

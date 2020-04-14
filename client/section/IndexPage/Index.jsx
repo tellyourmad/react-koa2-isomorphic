@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./style";
 
 import { connect } from "react-redux";
-import { mapStateToProps, mapDispatchToProps } from "../../redux/connect";
-import ActionTypes from "../../redux/ActionTypes";
+import { mapStateToProps, mapDispatchToProps } from "@redux/connect";
+import ActionTypes from "@redux/ActionTypes";
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class IndexPage extends React.Component {
     this.state = {
       name: props.ReduxState.user.name,
       pwd: props.ReduxState.user.password,
-      saved: false
+      saved: false,
     };
   }
   submit() {
@@ -23,13 +23,14 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div className={styles.indexPage}>
-        <p className={styles.title}>首页首页文案</p>
+        <p className={styles.title}>首页文案文案文案</p>
+        <p>给redux录入信息</p>
         <ul>
           <li>
             <span>账号：</span>
             <input
               value={this.state.name}
-              onChange={e =>
+              onChange={(e) =>
                 this.setState({ name: e.target.value, saved: false })
               }
             />
@@ -38,7 +39,7 @@ class IndexPage extends React.Component {
             <span>密码：</span>
             <input
               value={this.state.pwd}
-              onChange={e =>
+              onChange={(e) =>
                 this.setState({ pwd: e.target.value, saved: false })
               }
             />

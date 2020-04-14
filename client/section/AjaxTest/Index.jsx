@@ -1,12 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./style";
 import ajax from "@utils/ajax";
 
-export default class AjaxTest extends React.Component {
+class AjaxTest extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: null
+      accepting: false,
+      userInfo: null,
     };
   }
   // async UNSAFE_componentWillMount() {
@@ -17,23 +19,30 @@ export default class AjaxTest extends React.Component {
   //   console.log(res)
   //   a = res;
   // }
-  getUserInfo() {
+  async getUserInfo() {
+    this.setState({
+      accepting: true,
+    });
     ajax
       .send({
         url: "api/user/getUserInfo",
-        type: "get"
+        type: "get",
       })
-      .then(res => {
+      .then((res) => {
         this.setState({
-          userInfo: res
+          userInfo: res,
         });
-        console.log(res);
+        this.setState({
+          accepting: false,
+        });
       });
   }
   render() {
+    console.log(this.context);
     return (
       <div className={styles.ajaxTest}>
         <p className={styles.title}>下面是发送请求演示：</p>
+        {this.state.accepting && <div>请求中（接口加了个2s延迟）...</div>}
         {this.state.userInfo && (
           <div>
             <p>账号:{this.state.userInfo.name}</p>
@@ -48,3 +57,9 @@ export default class AjaxTest extends React.Component {
     );
   }
 }
+
+AjaxTest.contextTypes = {
+  test: PropTypes.number,
+};
+
+export default AjaxTest;

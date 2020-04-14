@@ -6,34 +6,42 @@ require("babel-polyfill");
 // Node babel source map support
 // require('source-map-support').install()
 
-const fs = require("fs");
-require("babel-register")(JSON.parse(fs.readFileSync("./.babelrc")));
+/**
+ * 引入多个钩子（hook）来帮助服务端去解析它所不支持的文件或语法
+ */
 
 const config = require("../build/webpack.dev.config");
-
+// 增加花名
 require("module-alias").addAliases(config.resolve.alias);
 
-// Css require hook
+const fs = require("fs");
+// Babel
+require("babel-register")(JSON.parse(fs.readFileSync("./.babelrc")));
+
+// CSS钩子
 require("css-modules-require-hook")({ extensions: [".css"] });
+
+// LESS钩子
 require("css-modules-require-hook")({
   extensions: [".less"],
+  // // postcss文档：http://api.postcss.org/postcss.html
   preprocessCss: (css, filename) =>
     require("postcss")([require("postcss-modules-values")]).process(css, {
-      from: filename
+      from: filename,
     }).css,
   processorOpts: { parser: require("postcss-less").parse },
   camelCase: true,
-  generateScopedName: "[name]__[local]__[hash:base64:8]",
+  generateScopedName: "[name]__[local]__[hash:base64:8]", // 必需与webpack.dev.config中定义的localIdentName一样
   resolve: {
-    alias: config.resolve.alias
-  }
+    alias: config.resolve.alias,
+  },
 });
 
-// Image require hook
+// 静态资源（图片）钩子
 require("asset-require-hook")({
   name: "/[hash].[ext]",
   extensions: ["jpg", "png", "gif", "webp", "svg"],
-  limit: 8000
+  limit: 8000,
 });
 
 const app = require("./app.js"),
@@ -49,7 +57,7 @@ const app = require("./app.js"),
 compiler.plugin("emit", (compilation, callback) => {
   const assets = compilation.assets;
   let file, data;
-  Object.keys(assets).forEach(key => {
+  Object.keys(assets).forEach((key) => {
     if (key.match(/\.html$/)) {
       file = path.resolve(__dirname, key);
       data = assets[key].source();
@@ -65,7 +73,7 @@ app.use(
   convert(
     devMiddleware(compiler, {
       noInfo: true,
-      publicPath: config.output.publicPath
+      publicPath: config.output.publicPath,
     })
   )
 );

@@ -1,6 +1,6 @@
 import Router from "koa-router";
 import utils from "../common/utils";
-import Config from "./config.json"; // 后端服务地址
+import Config from "./config"; // 后端服务地址
 
 const router = new Router({ prefix: "/login" });
 

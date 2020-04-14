@@ -24,13 +24,13 @@ module.exports = {
         "right",
         "top",
         "bottom",
-        "border-radius"
+        "border-radius",
       ],
-      rootValue: 18,
+      rootValue: 75,
       minPixelValue: 1.01,
       selectorBlackList: ["html"],
       mediaQuery: false,
-      unitPrecision: 5
-    }
-  }
+      unitPrecision: 5,
+    },
+  },
 };
